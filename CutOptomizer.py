@@ -65,9 +65,9 @@ for i in range(len(Lengths)):
             Larges.append(Lengths[i])
 
 bins = binpacking.to_constant_volume(d=Smalls, V_max=maxlength)
-for binset in bins:
-    for length in binset:
-        length -= kerf
+for i in range(len(bins)):
+    for j in range(len(bins[i])):
+        bins[i][j] -= kerf
 print("2020 Packings:")
 
 for i in range(len(bins)):
@@ -77,9 +77,9 @@ print(len(bins), " Stock Material Lengths Required")
 
 # pack 2040s
 bins2 = binpacking.to_constant_volume(d=Larges, V_max=maxlength)
-for binset in bins2:
-    for length in binset:
-        length -= kerf
+for i in range(len(bins2)):
+    for j in range(len(bins2[i])):
+        bins2[i][j] -= kerf
 
 print("2040 Packings:")
 
